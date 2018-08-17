@@ -1,13 +1,13 @@
 {
-    "name": "distributedblocks",
-    "productName": "DistributedBlocks",
-    "author": "distributedblocks",
+    "name": "glbraincoin",
+    "productName": "GlbrainCoin",
+    "author": "GLbrain Coin",
     "main": "src/electron-main.js",
     "version": "0.24.1",
-    "description": "distributedblocks wallet",
+    "description": "Glbrain wallet",
     "license": "MIT",
     "build": {
-        "appId": "org.distributedblocks.distributedblocks",
+        "appId": "org.glbrain.glbrain",
         "nsis": {
             "oneClick": false,
             "allowToChangeInstallationDirectory": true

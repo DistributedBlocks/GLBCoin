@@ -36,10 +36,10 @@ let win;
 var skycoin = null;
 
 function startSkycoin() {
-  console.log('Starting distributedblocks from electron');
+  console.log('Starting glbrain from electron');
 
   if (skycoin) {
-    console.log('distributedblocks already running');
+    console.log('glbrain  already running');
     app.emit('skycoin-ready');
     return
   }
@@ -53,15 +53,15 @@ function startSkycoin() {
   var exe = (() => {
     switch (process.platform) {
       case 'darwin':
-        return path.join(appPath, '../../Resources/app/distributedblocks');
+        return path.join(appPath, '../../Resources/app/glbrain');
       case 'win32':
         // Use only the relative path on windows due to short path length
         // limits
-        return './resources/app/distributedblocks.exe';
+        return './resources/app/glbrain.exe';
       case 'linux':
-        return path.join(path.dirname(appPath), './resources/app/distributedblocks');
+        return path.join(path.dirname(appPath), './resources/app/glbrain');
       default:
-        return './resources/app/distributedblocks';
+        return './resources/app/glbrain';
     }
   })()
 
@@ -87,7 +87,7 @@ function startSkycoin() {
   createWindow();
 
   skycoin.on('error', (e) => {
-    dialog.showErrorBox('Failed to start distributedblocks', e.toString());
+    dialog.showErrorBox('Failed to start glbrain', e.toString());
     app.quit();
   });
 
@@ -114,13 +114,13 @@ function startSkycoin() {
 
   skycoin.on('close', (code) => {
     // log.info('distributedblocks closed');
-    console.log('distributedblocks closed');
+    console.log('glbrain closed');
     reset();
   });
 
   skycoin.on('exit', (code) => {
     // log.info('distributedblocks exited');
-    console.log('distributedblocks exited');
+    console.log('glbrain exited');
     reset();
   });
 }
@@ -139,7 +139,7 @@ function createWindow(url) {
   win = new BrowserWindow({
     width: 1200,
     height: 900,
-    title: 'DistributedBlocks',
+    title: 'GLBrain Coin',
     icon: iconPath,
     nodeIntegration: false,
     webPreferences: {
